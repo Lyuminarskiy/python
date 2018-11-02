@@ -4,12 +4,12 @@
 Нужно вывести результат вычислений.
 """
 
+template = "Результат: {:.2f}"
+
 while True:
     first = float(input("Первое число: "))
     second = float(input("Второе число: "))
     operation = input("Операция: ")
-
-    template = "{:.2f}"
 
     if operation == "+":
         print(template.format(first + second))
