@@ -8,3 +8,8 @@
 Введите предложение: Завтра идем купаться
 Самое длинное слово: купаться
 """
+
+sentence = input("Введите предложение: ")
+
+words_lengths = {len(word): word for word in sentence.split()}
+print(f"Самое длинное слово: {words_lengths[max(words_lengths)]}")

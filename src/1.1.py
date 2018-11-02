@@ -8,7 +8,7 @@
 
 first = float(input("Первое число: "))
 second = float(input("Второе число: "))
-operation = input("Операция: ")
+operation = input("Операция (+-*/): ")
 
 template = "Результат: {:.2f}"
 
@@ -20,8 +20,8 @@ elif operation == "*":
     print(template.format(first * second))
 elif operation == "/":
     if second == 0:
-        print("Деление на ноль недопустимо")
+        raise ZeroDivisionError("Деление на ноль недопустимо")
     else:
         print(template.format(first / second))
 else:
-    print("Неизвестная операция")
+    raise ValueError("Неизвестная операция")

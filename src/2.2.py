@@ -10,4 +10,6 @@
 """
 
 sentence = input("Введите предложение: ")
-print(" ".join(sentence.split(" ")[::-1]).capitalize())
+
+result = " ".join(sentence.split()[::-1]).capitalize()
+print(f"Разворот по словам: {result}")

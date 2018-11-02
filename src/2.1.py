@@ -10,4 +10,6 @@
 """
 
 sentence = input("Введите предложение: ")
-print(" ".join([word[::-1] for word in sentence.split(" ")]))
+
+result = " ".join([word[::-1] for word in sentence.split()])
+print(f"Разворот по словам: {result}")
