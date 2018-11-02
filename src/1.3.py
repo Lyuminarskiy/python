@@ -5,3 +5,23 @@
 
 https://ru.wikipedia.org/wiki/Треугольное_число
 """
+
+from math import sqrt
+
+
+def is_triangle(value: int) -> bool:
+    """
+    Проверяет, является ли число треугольным.
+
+    :param value: Проверяемое число.
+    :return: Результат проверки.
+    """
+    return value >= 0 and sqrt(value * 8 + 1).is_integer()
+
+
+number = int(input("Введите число: "))
+
+if is_triangle(number):
+    print("Введено треугольное число")
+else:
+    print("Введённое число не является треугольным")
