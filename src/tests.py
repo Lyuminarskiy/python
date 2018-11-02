@@ -6,7 +6,20 @@ from src import \
 
 class TestTask11(TestCase):
     def test_calculate(self):
-        self.assertEqual(task_1_1.calculate(2, 3, "+"), 5)
+        data = [(1, 5, "+", 6),
+                (-3, 4, "-", -7),
+                (3, -5, "*", -15),
+                (6, 4, "/", 1.5)]
+
+        for first, second, operator, result in data:
+            with self.subTest():
+                self.assertEqual(task_1_1.calculate(first, second, operator), result)
+
+        with self.assertRaises(ZeroDivisionError):
+            task_1_1.calculate(1, 0, "/")
+
+        with self.assertRaises(ValueError):
+            task_1_1.calculate(2, 3, "\\")
 
 
 class TestTask12(TestCase):
