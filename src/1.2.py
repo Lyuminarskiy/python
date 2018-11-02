@@ -13,3 +13,11 @@
  8 16 24 32 40 48 56 64 72
  9 18 27 36 45 54 63 72 81
 """
+
+for row in range(1, 10):
+    for column in range(1, 10):
+        if row == 1 and column == 1:
+            print(" " * 3, end="")
+            continue
+        print(f"{row * column:3d}", end="")
+    print()
