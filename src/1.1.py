@@ -6,25 +6,22 @@
 Нужно вывести результат вычислений.
 """
 
+first = float(input("Первое число: "))
+second = float(input("Второе число: "))
+operation = input("Операция: ")
+
 template = "Результат: {:.2f}"
 
-while True:
-    first = float(input("Первое число: "))
-    second = float(input("Второе число: "))
-    operation = input("Операция: ")
-
-    if operation == "+":
-        print(template.format(first + second))
-    elif operation == "-":
-        print(template.format(first - second))
-    elif operation == "*":
-        print(template.format(first * second))
-    elif operation == "/":
-        if second == 0:
-            print("Деление на ноль недопустимо")
-        else:
-            print(template.format(first / second))
+if operation == "+":
+    print(template.format(first + second))
+elif operation == "-":
+    print(template.format(first - second))
+elif operation == "*":
+    print(template.format(first * second))
+elif operation == "/":
+    if second == 0:
+        print("Деление на ноль недопустимо")
     else:
-        print("Неизвестная операция")
-
-    print()
+        print(template.format(first / second))
+else:
+    print("Неизвестная операция")
