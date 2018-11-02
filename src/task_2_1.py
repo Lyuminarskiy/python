@@ -9,7 +9,8 @@
 Разворот по словам: атоК тинам кот
 """
 
-sentence = input("Введите предложение: ")
+if __name__ == "__main__":
+    sentence = input("Введите предложение: ")
 
-result = " ".join([word[::-1] for word in sentence.split()])
-print(f"Разворот по словам: {result}")
+    result = " ".join([word[::-1] for word in sentence.split()])
+    print(f"Разворот по словам: {result}")

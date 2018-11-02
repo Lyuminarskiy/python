@@ -64,20 +64,21 @@ def fraction_to_string(fraction: Fraction) -> str:
 # Переопределяем формат отображения дроби.
 Fraction.__str__ = fraction_to_string
 
-first = parse_fraction(input("Первое число (a#b/c): "))
-second = parse_fraction(input("Второе число (a#b/c): "))
-operation = input("Операция (+-*/): ")
+if __name__ == "__main__":
+    first = parse_fraction(input("Первое число (a#b/c): "))
+    second = parse_fraction(input("Второе число (a#b/c): "))
+    operation = input("Операция (+-*/): ")
 
-if operation == "+":
-    print(first + second)
-elif operation == "-":
-    print(first - second)
-elif operation == "*":
-    print(first * second)
-elif operation == "/":
-    if second == 0:
-        raise ZeroDivisionError("Деление на ноль недопустимо")
+    if operation == "+":
+        print(first + second)
+    elif operation == "-":
+        print(first - second)
+    elif operation == "*":
+        print(first * second)
+    elif operation == "/":
+        if second == 0:
+            raise ZeroDivisionError("Деление на ноль недопустимо")
+        else:
+            print(first / second)
     else:
-        print(first / second)
-else:
-    raise ValueError("Неизвестная операция")
+        raise ValueError("Неизвестная операция")

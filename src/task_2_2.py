@@ -9,7 +9,8 @@
 Разворот по словам: Купаться идем завтра
 """
 
-sentence = input("Введите предложение: ")
+if __name__ == "__main__":
+    sentence = input("Введите предложение: ")
 
-result = " ".join(sentence.split()[::-1]).capitalize()
-print(f"Разворот по словам: {result}")
+    result = " ".join(sentence.split()[::-1]).capitalize()
+    print(f"Разворот по словам: {result}")
