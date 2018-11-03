@@ -8,6 +8,8 @@ stages:
 
 jobs:
   include:
-    - stage: Deploy
-      script: python -m unittest discover ./src --verbose
+    - stage: Test
+      script:
+        - python -m unittest discover ./src --verbose
+        - coverage run
       after_success: codecov
