@@ -1,5 +1,5 @@
 """
-Задание 2.4. Калькулятор дробей
+Задание 2.4. Калькулятор дробей.
 
 Запросить у пользователя два числа в виде 12#3/5, где до знака # идёт целая часть, между # и / идёт числитель,
 после / идёт знаменатель и операция. Вывести результат в аналогичном виде.
@@ -14,9 +14,10 @@
 
 import re
 from fractions import Fraction
+from task_1_1 import calculate
 
 
-def parse_fraction(representation: str) -> Fraction:
+def fraction_from_string(representation: str) -> Fraction:
     """
     На основе строкового представления дроби создаёт объект типа Fraction.
 
@@ -35,7 +36,7 @@ def parse_fraction(representation: str) -> Fraction:
     if denominator == 0:
         raise ValueError("Знаменатель дроби не может быть равен нулю")
 
-    sign = 1 if integer >= 0 else -1
+    sign = -1 if representation[0] == "-" else 1
 
     return Fraction(sign * (abs(integer) * denominator + numerator), denominator)
 
@@ -53,32 +54,22 @@ def fraction_to_string(fraction: Fraction) -> str:
     :param fraction: Объект типа Fraction.
     :return: Строковое представление дроби.
     """
+
     integer = int(abs(fraction.numerator) / fraction.denominator)
     numerator = abs(fraction.numerator) - integer * fraction.denominator
 
-    sign = 1 if fraction.numerator >= 0 else -1
+    sign = "" if fraction.numerator >= 0 else "-"
 
-    return f"{sign * integer}#{numerator}/{fraction.denominator}"
+    return f"{sign}{integer}#{numerator}/{fraction.denominator}"
 
 
 # Переопределяем формат отображения дроби.
 Fraction.__str__ = fraction_to_string
 
+
 if __name__ == "__main__":
-    first = parse_fraction(input("Первое число (a#b/c): "))
-    second = parse_fraction(input("Второе число (a#b/c): "))
+    first = fraction_from_string(input("Первое число (a#b/c): "))
+    second = fraction_from_string(input("Второе число (a#b/c): "))
     operation = input("Операция (+-*/): ")
 
-    if operation == "+":
-        print(first + second)
-    elif operation == "-":
-        print(first - second)
-    elif operation == "*":
-        print(first * second)
-    elif operation == "/":
-        if second == 0:
-            raise ZeroDivisionError("Деление на ноль недопустимо")
-        else:
-            print(first / second)
-    else:
-        raise ValueError("Неизвестная операция")
+    print(f"Результат: {calculate(first, second, operation)}")

@@ -1,5 +1,5 @@
 """
-Задание 2.3. Самое длинное слово
+Задание 2.3. Самое длинное слово.
 
 Запросить у пользователя предложение без знаков препинания и вывести самое длинное слово.
 
@@ -9,8 +9,21 @@
 Самое длинное слово: купаться
 """
 
-if __name__ == "__main__":
-    sentence = input("Введите предложение: ")
+
+def find_longest_word(sentence: str) -> str:
+    """
+    Находит самое длинное слово в предложении без знаков препинания.
+    Если было найдено несколько слов с одинаковой длиной, возвращает последнее.
+
+    :param sentence: Предложение.
+    :return: Самое длинное слово.
+    """
 
     words_lengths = {len(word): word for word in sentence.split()}
-    print(f"Самое длинное слово: {words_lengths[max(words_lengths)]}")
+
+    return words_lengths[max(words_lengths)]
+
+
+if __name__ == "__main__":
+    sentence = input("Введите предложение: ")
+    print(f"Самое длинное слово: {find_longest_word(sentence)}")
