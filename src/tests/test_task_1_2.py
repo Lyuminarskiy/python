@@ -2,8 +2,8 @@
 Тесты для задания 1.2.
 """
 
-from unittest import TestCase
-import task_1_2
+from unittest import TestCase, main
+from tasks import task_1_2
 
 
 class TestCreateMultiplicationTable(TestCase):
@@ -24,3 +24,7 @@ class TestCreateMultiplicationTable(TestCase):
              "  9 18 27 36 45 54 63 72 81\n")
 
         self.assertEqual(task_1_2.create_multiplication_table(), data)
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

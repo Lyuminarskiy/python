@@ -15,7 +15,7 @@
 
 import re
 from fractions import Fraction
-from task_1_1 import calculate
+from tasks.task_1_1 import calculate
 
 
 def fraction_from_string(representation: str) -> Fraction:

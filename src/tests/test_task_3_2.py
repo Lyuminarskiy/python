@@ -2,8 +2,8 @@
 Тесты для задания 3.2.
 """
 
-from unittest import TestCase
-import task_3_2
+from unittest import TestCase, main
+from tasks import task_3_2
 
 
 class TestRomanToDecimal(TestCase):
@@ -61,3 +61,7 @@ class TestRomanToDecimal(TestCase):
         for roman_number in data:
             with self.assertRaises(ValueError, msg=f'roman_number="{roman_number}"'):
                 task_3_2.roman_to_decimal(roman_number)
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

@@ -2,8 +2,8 @@
 Тесты для задания 3.2.
 """
 
-from unittest import TestCase
-import task_3_3
+from unittest import TestCase, main
+from tasks import task_3_3
 
 
 class TestToDecreasingNumber(TestCase):
@@ -25,3 +25,7 @@ class TestToDecreasingNumber(TestCase):
             with self.subTest():
                 self.assertEqual(task_3_3.to_decreasing_number(decreasing_number), result,
                                  f"decreasing_number={decreasing_number}")
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

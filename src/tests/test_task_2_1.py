@@ -2,8 +2,8 @@
 Тесты для задания 2.1.
 """
 
-from unittest import TestCase
-import task_2_1
+from unittest import TestCase, main
+from tasks import task_2_1
 
 
 class TestReverseWords(TestCase):
@@ -22,3 +22,7 @@ class TestReverseWords(TestCase):
         for sentence, result in data:
             with self.subTest():
                 self.assertEqual(task_2_1.reverse_words(sentence), result, f'sentence="{sentence}"')
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

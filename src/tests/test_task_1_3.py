@@ -2,8 +2,8 @@
 Тесты для задания 1.3.
 """
 
-from unittest import TestCase
-import task_1_3
+from unittest import TestCase, main
+from tasks import task_1_3
 
 
 class TestIsTriangle(TestCase):
@@ -27,3 +27,7 @@ class TestIsTriangle(TestCase):
         for value, result in data:
             with self.subTest():
                 self.assertEqual(task_1_3.is_triangle(value), result, f"value={value}")
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

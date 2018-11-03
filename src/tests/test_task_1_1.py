@@ -2,8 +2,8 @@
 Тесты для задания 1.1.
 """
 
-from unittest import TestCase
-import task_1_1
+from unittest import TestCase, main
+from tasks import task_1_1
 
 
 class TestCalculate(TestCase):
@@ -51,3 +51,7 @@ class TestCalculate(TestCase):
 
         with self.assertRaises(ZeroDivisionError):
             task_1_1.calculate(1, 0, "/")
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

@@ -2,8 +2,8 @@
 Тесты для задания 2.3.
 """
 
-from unittest import TestCase
-import task_2_3
+from unittest import TestCase, main
+from tasks import task_2_3
 
 
 class TestFindLongestWord(TestCase):
@@ -22,3 +22,7 @@ class TestFindLongestWord(TestCase):
         for sentence, result in data:
             with self.subTest():
                 self.assertEqual(task_2_3.find_longest_word(sentence), result, f'sentence="{sentence}"')
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

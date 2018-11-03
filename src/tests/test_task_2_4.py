@@ -2,9 +2,9 @@
 Тесты для задания 2.4.
 """
 
-from unittest import TestCase
+from unittest import TestCase, main
 from fractions import Fraction
-import task_2_4
+from tasks import task_2_4
 
 
 class TestFractionFromString(TestCase):
@@ -53,3 +53,7 @@ class TestFractionToString(TestCase):
         for fraction, result in data:
             with self.subTest():
                 self.assertEqual(task_2_4.fraction_to_string(fraction), result, f"fraction={fraction}")
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

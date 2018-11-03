@@ -2,8 +2,8 @@
 Тесты для задания 3.4.
 """
 
-from unittest import TestCase
-import task_3_4
+from unittest import TestCase, main
+from tasks import task_3_4
 
 
 class TestPluralize(TestCase):
@@ -87,3 +87,7 @@ class TestPluralize(TestCase):
         for forms, amount, result in data:
             with self.subTest():
                 self.assertEqual(task_3_4.pluralize(forms, amount), result, f"forms={forms}, amount={amount}")
+
+
+if __name__ == "__main__":
+    main(verbosity=2)

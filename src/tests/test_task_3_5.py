@@ -2,8 +2,8 @@
 Тесты для задания 3.4.
 """
 
-from unittest import TestCase
-import task_3_5
+from unittest import TestCase, main
+from tasks import task_3_5
 
 
 class TestToSymmetricTernaryNumber(TestCase):
@@ -71,3 +71,7 @@ class TestFromSymmetricTernaryNumber(TestCase):
             with self.subTest():
                 self.assertEqual(task_3_5.from_symmetric_ternary_number(ternary_number), result,
                                  f'ternary_number="{ternary_number}"')
+
+
+if __name__ == "__main__":
+    main(verbosity=2)
