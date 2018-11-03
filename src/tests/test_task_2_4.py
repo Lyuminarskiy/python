@@ -14,12 +14,13 @@ class TestFractionFromString(TestCase):
         Проверяет работу с корректными данными.
         """
 
-        data = \
-            [("-2#1/2", Fraction(-5, 2)),
-             ( "1#1/3", Fraction( 4, 3)),
-             ("-1#1/6", Fraction(-7, 6)),
-             ( "0#1/7", Fraction( 1, 7)),
-             ("-0#1/7", Fraction(-1, 7))]
+        data = [
+            ("-2#1/2", Fraction(-5, 2)),
+            ( "1#1/3", Fraction( 4, 3)),
+            ("-1#1/6", Fraction(-7, 6)),
+            ( "0#1/7", Fraction( 1, 7)),
+            ("-0#1/7", Fraction(-1, 7))
+        ]
 
         for representation, result in data:
             with self.subTest():

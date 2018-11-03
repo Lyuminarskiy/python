@@ -13,12 +13,13 @@ class TestToDecreasingNumber(TestCase):
         Проверяет работу с корректными данными.
         """
 
-        data = \
-            [( 71801,  87110),
-             (  1937,   9731),
-             (     0,      0),
-             ( -2038,  -8320),
-             (-71801, -87110)]
+        data = [
+            ( 71801,  87110),
+            (  1937,   9731),
+            (     0,      0),
+            ( -2038,  -8320),
+            (-71801, -87110)
+        ]
 
         for decreasing_number, result in data:
             with self.subTest():

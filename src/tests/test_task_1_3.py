@@ -13,15 +13,16 @@ class TestIsTriangle(TestCase):
         Проверяет работу с корректными данными.
         """
 
-        data = \
-            [(-1, False),
-             ( 0, True),
-             ( 1, True),
-             ( 2, False),
-             ( 3, True),
-             ( 4, False),
-             ( 5, False),
-             ( 6, True)]
+        data = [
+            (-1, False),
+            ( 0, True),
+            ( 1, True),
+            ( 2, False),
+            ( 3, True),
+            ( 4, False),
+            ( 5, False),
+            ( 6, True)
+        ]
 
         for value, result in data:
             with self.subTest():

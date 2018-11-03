@@ -12,9 +12,10 @@ class TestIsUnluckyTicket(TestCase):
         Проверяет работу с корректными данными.
         """
 
-        data = \
-            [("123456", False),
-             ("583689", True)]
+        data = [
+            ("123456", False),
+            ("583689", True)
+        ]
 
         for ticket, result in data:
             with self.subTest():
