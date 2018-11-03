@@ -1,0 +1,12 @@
+language: python
+
+install: pip install --user codecov
+
+stages:
+  - Test
+
+jobs:
+  include:
+    - stage: Deploy
+      script: python -m unittest discover ./src --verbose
+      after_success: codecov
