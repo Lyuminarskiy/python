@@ -5,11 +5,13 @@ install: pip install codecov
 
 stages:
   - Test
+  - Coverage
 
 jobs:
   include:
     - stage: Test
-      script:
-        - python -m unittest discover ./src --verbose
-        - coverage run
+      script: python -m unittest discover ./src --verbose
+
+    - stage: Coverage
+      script: coverage run --source=./src
       after_success: codecov
