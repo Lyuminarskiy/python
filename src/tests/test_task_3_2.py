@@ -46,9 +46,9 @@ class TestRomanToDecimal(TestCase):
              ("CD",      400),
              ("CDXCIX",  499)]
 
-        for roman, result in data:
+        for roman_number, result in data:
             with self.subTest():
-                self.assertEqual(task_3_2.roman_to_decimal(roman), result, f"roman={roman}")
+                self.assertEqual(task_3_2.roman_to_decimal(roman_number), result, f"roman_number={roman_number}")
 
     def test_roman_to_decimal__NumberIsOutOfRange__ShouldRaiseValueError(self):
         """
@@ -57,6 +57,6 @@ class TestRomanToDecimal(TestCase):
 
         data = ["D", "DX", "M"]
 
-        for roman in data:
-            with self.assertRaises(ValueError, msg=f'roman="{roman}"'):
-                task_3_2.roman_to_decimal(roman)
+        for roman_number in data:
+            with self.assertRaises(ValueError, msg=f'roman_number="{roman_number}"'):
+                task_3_2.roman_to_decimal(roman_number)
