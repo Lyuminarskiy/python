@@ -1,17 +1,16 @@
 language: python
 python: "3.6"
 
-install: pip install codecov
-
 stages:
-  - Test
+#  - Test
   - Coverage
 
 jobs:
   include:
-    - stage: Test
-      script: python -m unittest discover ./src --verbose
+#    - stage: Test
+#      script: python -m unittest discover ./src --verbose
 
     - stage: Coverage
-      script: coverage run --source=./src
+      install: pip install coverage codecov
+      script: coverage run --source=./src/tests
       after_success: codecov
