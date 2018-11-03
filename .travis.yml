@@ -11,6 +11,9 @@ jobs:
 #      script: python -m unittest discover ./src --verbose
 
     - stage: Coverage
-      install: pip install coverage codecov
-      script: coverage run --source=./src/tests
+      install: pip install codecov
+      script:
+        - coverage help
+        - coverage help run
+        - coverage run -m src
       after_success: codecov
