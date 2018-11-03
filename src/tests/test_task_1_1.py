@@ -3,7 +3,6 @@
 """
 
 from unittest import TestCase
-from fractions import Fraction
 import task_1_1
 
 
